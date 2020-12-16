@@ -9,7 +9,7 @@ var count = 0;
 
 function prompt2()
 {
-	alert("hi");
+
 	
 	// if this is the start, display the textbox and hide the story. 
 	// then display the first element of partsOfSpeech in the textbox. 
@@ -41,12 +41,12 @@ function displayStory()
 	var i;
 	
 	// loop to stitch elements of story with elements of answers. 
-		anwser = anwser + story[0];
-		anwser = anwser + partsOfSpeech[0];
-		alert(answer);
+		
 		
 	for ( i = 0; i< answers.length; i++)
 	{
+	anwser = anwser + story[i];
+	anwser = anwser + answers[i];
 	if(i > story.length){
 	awnser = awnser + partsOfSpeech[partsOfSpeech.lengh - 1];
 	}
@@ -55,7 +55,7 @@ function displayStory()
 
 	// Make the story div visible, and the userEnter div hidden.		
 		document.getElementById("userEnter").style.visibility = "hidden";
-		document.getElementById("story").style.visibility = "visable";
+		document.getElementById("story").style.visibility = "visible";
 	// return the variable answer.
 		return answer
 }
