@@ -2,20 +2,22 @@
 <head> 
 <script language="JavaScript">,
 
-var partsOfSpeech = ["please enter boys a name ", "please enter a verb", "please enter a verb", "please enter a noun", "please enter the previous noun again", "please enter a plural noun", "Please enter the name from the begining" ];
+var partsOfSpeech = ["please enter boys a name ", "please enter a verb", "please enter a verb", "please enter a noun", "please enter the previous noun again", "please enter a plural noun", "Please enter the name from the begining" "please enter a plural noun", "please enter a noun and rember it", "please enter a noun", "please enter the noun that you remebered earlier.", "please enter an emotion", "lastly, enter the noun you remembered again." ];
 var answers = new Array(partsOfSpeech.length);
 var story = ["Once, there was a kid at CHS named ", ". He enjoyed many things like "," and ",". In his Jr year of high school he had saved enough money to buy a ",". He spent a lot of money on this "," so that it was good quality. He showed it off to his friends but his friends said it was out of date. They all had ",". This made","sad so when his friends bought new ",", he saved up money. He saved so much money that at the end of the year he bought a ", " and everyone was impressed. Even though his friends got a new ",  ", he still had his ", " But what was important was that he felt ", " But what was important was that he felt ", " about his " ];
 var count = 0;
 
 function prompt2()
 {
-alert("hi");
+	alert("hi");
+	
 	// if this is the start, display the textbox and hide the story. 
 	// then display the first element of partsOfSpeech in the textbox. 
-	//document.getElementById("userEnter").style.visibility = "visible";
-	//document.getElementById("story").style.visibility = "hidden";
-	//document.getElementById("response").value = partsOfSpeech[count];
-
+	
+	document.getElementById("userEnter").style.visibility = "visible";
+	document.getElementById("story").style.visibility = "hidden";
+	document.getElementById("response").value = partsOfSpeech[count];
+	
 }
 function getWords()
 {
@@ -39,10 +41,10 @@ function displayStory()
 	var i;
 	
 	// loop to stitch elements of story with elements of answers. 
-		/*anwser = anwser + story[0];
+		anwser = anwser + story[0];
 		anwser = anwser + partsOfSpeech[0];
 		alert(answer);
-		*/
+		
 	for ( i = 0; i< answers.length; i++)
 	{
 	if(i > story.length){
@@ -55,7 +57,7 @@ function displayStory()
 		document.getElementById("userEnter").style.visibility = "hidden";
 		document.getElementById("story").style.visibility = "visable";
 	// return the variable answer.
-		//return answer
+		return answer
 }
 
 </script>
