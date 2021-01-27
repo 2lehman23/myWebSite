@@ -1,0 +1,98 @@
+<html> 
+<head> 
+<script language="JavaScript">
+
+/*************** Algorithm ******************
+1. create a textbox and a box for the options
+2. check if the user selects a option
+3. if they did show the fun fact
+4. wait than clear the text box 
+5. clear the option box
+6. loop back to the start
+7.
+8 
+
+*/
+
+
+var group = ["choose a category ","Redstone", "Blocks", "Mobs", "Weponds", "Player", "History", "Creator", "Random"];
+
+var facts = ["-- No category selected --", "A redstone signal travels 15 blocks", "The amount of blocks you can fit from the top of the world to the bottom is 256", "A skeliton can fall 22 blocks without dying.", "If you fire an arrow on a flat plane it will travel 15  blocks but if you angle it 38 degrees up it will travel 52 blocks", "A player can hold 27 items in their inventory and 9 in their hotbar", "Minecraft has been around since 2011","The creator of minecraft sold it to microsoft for $2.5 billion","as of 2020 minecraft is worth $1.9 billon"];
+
+function loadData()
+{
+	var sum = 0;
+	for(var i = 0; i<group.length; i++)
+    {
+        var daList = document.getElementById("prez");
+  		var option = document.createElement("option");
+  		option.text = group[i];
+  		daList.add(option);
+    }
+}
+
+// This function identifies which element from the drop down has been selected. It calls the 
+// getIndex function to acquire what the index of the selected item. Then it displays the 
+// corresponding element in the facts list. (This is diplayed in the textbox on the web page.)
+function start()
+{
+	var Categorys = document.getElementById("prez");
+	//alert(getIndex(Categorys.value));
+	
+	var daIndex = getIndex(Categorys.value);
+	if(daIndex > -1)
+	{
+		document.getElementById("funFact").value = facts[daIndex];
+	}
+	else
+	{
+		alert("an error occured");
+	}
+	
+	
+	
+//alert(getIndex("Blocks"));
+ 
+
+}
+
+// This function searches the group array for the element passed as a parameter
+// and returns the index number for that element in the array.
+function getIndex(d)
+{
+	var answer = -1;
+	
+	for(var i = 0; i < group.length; i++)
+	{
+		if(group[i] == d)
+		{
+			answer = i;
+		}
+	}
+	
+	return answer;
+}
+
+
+
+</script>
+</head>
+<body onload="loadData()" bgcolor="#FFF1AE" link="blue" vlink="blue"> 
+<center>
+<h1>Minecraft Fun Facts</h1>
+<p> <a href="index.html"> Click here </a> to return to my home page.</p>
+
+<br/><br/>
+<table border = 3>
+	<tr>
+		<td>  	<select name="p1" id="prez"></select>	</td>
+		<td>	<input id="funFact" type="text" size="40"/> </td>
+	</tr>
+</table>
+<br/><br/>
+<input type="button" value="click" onclick="start()"/>
+</center>
+
+
+</body>
+</html>
