@@ -34,7 +34,9 @@ function displayQuestion()
 
 if (index > 9)
 {
+alert("congrats you got " + score + " out of 10")
 index = 0;
+score = 0;
 }
 document.getElementById("question").value = questions[index];
 index++;
