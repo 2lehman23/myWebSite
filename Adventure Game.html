@@ -6,9 +6,9 @@ var key = 1;
 var room = 0;
 var flashlight = 0;
 var loop = 0;
-var Tb = document.getElementById("TBox");
-/*
-var rooms = [
+
+var rooms = 
+[
 	["Your eyes start to open as you are blinded by a bright light. You sit up and see nothing but a door and a bed that you are on."], 
 	["You enter a long hallway with a door at the end and multiple paintings on the wall."],
 	["This next room has a table with a flashlight on it and two shelves. The door is on the other side of the room."],
@@ -17,7 +17,7 @@ var rooms = [
 	["You reach outside and have escaped the dungeon"]
 ];
 var options = [
-	["Open the door", "look under the bed" "Lay back down"],
+	["Open the door", "look under the bed", "Lay back down"],
 	["Open the door","Search the paintings","Go back"],
 	["Open the door", "Take the flashlight","Look on the shelves"],
 	["Use flashlight","Use flashlight","Use flashlight"],
@@ -29,7 +29,7 @@ var items = [
 	["You now have a flashlight", "When you look on the shelves you find a key"],
 	["You use the flashlight and see a door on the other side of the room."]
 ];
-
+/*
 
 
 function rooms(){
@@ -53,83 +53,85 @@ Room(room)
 }
 
 }
-function Room(){
-var roomKey = 0;
-if(room == 4){
-if (flashlight = 0){
-document.getElementById("TBox").value = rooms[room][1]
+function Room()
+{
+	var roomKey = 0;
+	if(room == 4)
+	{
+		if (flashlight = 0)
+		{
+			document.getElementById("TBox").value = rooms[room][1]
+		}
+	}
+	else 
+	{
+		document.getElementById("TBox").value = rooms[room][0]
+	}
+	setOptions(room)
+	Option = 0;
 }
-}
-else {
-document.getElementById("TBox").value = rooms[room][0]
-}
-setOptions(room)
-Option = 0;
 
 function OpChoice(d)
-}
-	while(loop == 0)
+{
+	if (d == 1)
 	{
-		if (d == 1)
+		if (room == 4)
 		{
-			if (room == 4)
+			if (flashlight == 1)
+			{
+				room++;
+				rooms()
+			}
+		}	
+		if (room == 5)
+		{
+			room++;
+			loop = 1;
+			rooms()
+		}
+		if (roomKey == 1)
+		{
+			room++
+			loop = 1;
+			rooms()
+		}
+		else
+		{
+			LockedDoor() 
+		}
+	}
+	if(d == 2)
+	{
+		
+		if (room == 4)
 			{
 				if (flashlight == 1)
 				{
 					room++;
 					rooms()
 				}
-			}	
-			if (room == 5)
-			{
-				room++;
-				loop = 1;
-				rooms()
 			}
-			if (roomKey == 1)
-			{
-				room++
-				loop = 1;
-				rooms()
-			}
-			else
-			{
-				LockedDoor() 
-			}
-		}
-		if(d == 2)
+		else
 		{
-			
-			if (room == 4)
-				{
-					if (flashlight == 1)
-					{
-						room++;
-						rooms()
-					}
-				}
-			else
-			{
-			document.getElementById("TBox").value = items [room],[0];
-			}
+		document.getElementById("TBox").value = items [room],[0];
 		}
-		if(d == 3)
-		{
-			if (room == 4)
-				{
-					if (flashlight == 1)
-					{
-						room++;
-						rooms()
-					}
-				}
-			else
+	}
+	if(d == 3)
+	{
+		if (room == 4)
 			{
+				if (flashlight == 1)
+				{
+					room++;
+					rooms()
+				}
+			}
+		else
+		{
 			document.getElementById("TBox").value = items [room],[1];
-			}
-		
 		}
-	} 
+	
+	}
 }
 
 function NextRoom()
@@ -161,29 +163,31 @@ function LockedDoor()
 	}
 
 }
-
-function setOptions(){
-	document.getElementById("Op1").value = options[1][0];
-	document.getElementById("Op2").value= options[2][1];
-	document.getElementById("Op3").value = options[3][2];
-}
 */
+function setOptions(){
+	document.getElementById("Op1").value = options[room][0];
+	document.getElementById("Op2").value = options[room][1];
+	document.getElementById("Op3").value = options[room][2];
+}
 
+function OpChoice(d){
+alert("hi");
+}
 function Option1()
 {
-	OpChoice.call(1);
-	alert(Option);
+	OpChoice(1);
+	alert("hello")
 	
 }
 
 function Option2()
 {
-	OpChoice.call(2);
+	OpChoice(2);
 }
 
 function Option3()
 {
-	OpChoice.call(3);
+	OpChoice(3);
 }
 
 </script>
