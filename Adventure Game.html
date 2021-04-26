@@ -1,0 +1,205 @@
+<html> 
+<head> 
+<script language="JavaScript">
+var Option = 0;
+var key = 1;
+var room = 0;
+var flashlight = 0;
+var loop = 0;
+var Tb = document.getElementById("TBox");
+/*
+var rooms = [
+	["Your eyes start to open as you are blinded by a bright light. You sit up and see nothing but a door and a bed that you are on."], 
+	["You enter a long hallway with a door at the end and multiple paintings on the wall."],
+	["This next room has a table with a flashlight on it and two shelves. The door is on the other side of the room."],
+	["This next room is pitch black, you can not see a thing. Luckily you have the flashlight, would you like to use it.", "You enter the room and cannot see. It is pitch black. You hear the door behind you shut."],
+	["You use the flashlight and see a door on the other side of the room."],
+	["You reach outside and have escaped the dungeon"]
+];
+var options = [
+	["Open the door", "look under the bed" "Lay back down"],
+	["Open the door","Search the paintings","Go back"],
+	["Open the door", "Take the flashlight","Look on the shelves"],
+	["Use flashlight","Use flashlight","Use flashlight"],
+	["Open the door", "Open the door", "Open the door"]
+];
+var items = [
+	["You see a shiny key under the bed.", "You feel fully rested. Your eyes, once again, start to open as you are blinded by a bright light. You sit up and see nothing but a door and a bed that you are on."],
+	["You search the paintings and find the key to the door.","You try to go back but the door is locked behind you."],
+	["You now have a flashlight", "When you look on the shelves you find a key"],
+	["You use the flashlight and see a door on the other side of the room."]
+];
+
+
+
+function rooms(){
+if (room = 1){
+Room(room)
+}
+if (room = 2){
+Room(room)
+}
+if (room = 3){
+Room(room)
+}
+if (room = 4){
+Room(room)
+}
+if (room = 5){
+Room(room)
+}
+if (room = 6){
+Room(room)
+}
+
+}
+function Room(){
+var roomKey = 0;
+if(room == 4){
+if (flashlight = 0){
+document.getElementById("TBox").value = rooms[room][1]
+}
+}
+else {
+document.getElementById("TBox").value = rooms[room][0]
+}
+setOptions(room)
+Option = 0;
+
+function OpChoice(d)
+}
+	while(loop == 0)
+	{
+		if (d == 1)
+		{
+			if (room == 4)
+			{
+				if (flashlight == 1)
+				{
+					room++;
+					rooms()
+				}
+			}	
+			if (room == 5)
+			{
+				room++;
+				loop = 1;
+				rooms()
+			}
+			if (roomKey == 1)
+			{
+				room++
+				loop = 1;
+				rooms()
+			}
+			else
+			{
+				LockedDoor() 
+			}
+		}
+		if(d == 2)
+		{
+			
+			if (room == 4)
+				{
+					if (flashlight == 1)
+					{
+						room++;
+						rooms()
+					}
+				}
+			else
+			{
+			document.getElementById("TBox").value = items [room],[0];
+			}
+		}
+		if(d == 3)
+		{
+			if (room == 4)
+				{
+					if (flashlight == 1)
+					{
+						room++;
+						rooms()
+					}
+				}
+			else
+			{
+			document.getElementById("TBox").value = items [room],[1];
+			}
+		
+		}
+	} 
+}
+
+function NextRoom()
+{
+	if (room == 4){
+		if (flashlight == 1){
+		room++;
+		rooms()
+		}
+	}
+	else 
+	{
+	LockedDoor()
+	}
+
+}
+
+function LockedDoor()
+{
+	if (key == 1 )
+	{
+		room++;
+		key--;
+		rooms()
+	}
+	else 
+	{
+		document.getElementById("TBox").value = "You forgot the key for this door!";
+	}
+
+}
+
+function setOptions(){
+	document.getElementById("Op1").value = options[1][0];
+	document.getElementById("Op2").value= options[2][1];
+	document.getElementById("Op3").value = options[3][2];
+}
+*/
+
+function Option1()
+{
+	OpChoice.call(1);
+	alert(Option);
+	
+}
+
+function Option2()
+{
+	OpChoice.call(2);
+}
+
+function Option3()
+{
+	OpChoice.call(3);
+}
+
+</script>
+</head>
+<body > 
+<center>
+<h1>Adventure game</h1>
+</br>
+<input id="TBox" type="text" size="70" />
+</br></br></br>
+<input type="button" id="Op1" value="Option 1" onclick="Option1()" />
+<input type="button" id="Op2" value="Option 2" onclick="Option2()"/>
+<input type="button" id="Op3" value="Option 3" onclick="Option3()"/>
+<input type="button" id="NR" value="Next Room" onclick="NextRoom()"/>
+
+
+</center>
+</body>
+</html>
